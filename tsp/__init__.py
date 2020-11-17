@@ -68,7 +68,7 @@ class Tour:
             self._path.append(self._path[0])
 
     def missing(self, places):
-        return set(places) -  set(self._path)
+        return set(places) - set(self._path)
 
     def append(self, place):
         self._path.append(place)
