@@ -73,6 +73,10 @@ class Tour:
     def append(self, place):
         self._path.append(place)
 
+    @property
+    def visited_places(self):
+        return set(self._path)
+
     def __len__(self):
         return len(self._path)
 
