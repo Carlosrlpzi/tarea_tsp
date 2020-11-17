@@ -1,0 +1,17 @@
+[project]
+name = "TSP"
+description = ""
+version = "0.1"
+updated = 2020-10-13
+author = "Adolfo De Unánue"
+
+[[algorithms]]
+algorithm="tsp.algorithms.GreedyTSP"
+
+# [[algorithms]]
+# algorithm="tsp.algorithms.AntColony"
+# [algorithms.hyperparameters]
+# alpha = [0.5, 1.0]
+# beta = [1.0, 2.0, 5.0]
+# rho = [0.5, 0.8]
+# Q = [10,100]
