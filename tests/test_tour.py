@@ -49,7 +49,7 @@ def test_close_tour(places):
 def test_missing(places):
     t1 = Tour()
     t2 = Tour()
-    t1.append(palces['A'])
+    t1.append(places['A'])
     t1.append(places['B'])
     t1.append(places['C'])
 
