@@ -1,6 +1,0 @@
-include pyproject.toml
-recursive-include config *.toml
-recursive-include data   *.tsp
-
-recursive-exclude * __pycache__
-recursive-exclude * *.py[co]
