@@ -1,0 +1,34 @@
+image: python:3.7
+
+before_script:
+  - pip install flake8 pytest pylint coverage pytest-cov
+  - pip install .
+
+stages:
+  - static analysis
+  - test
+
+flake8:
+  stage: static analysis
+  allow_failure: true
+  script:
+    - flake8 tsp/*.py
+
+
+pylint:
+  stage: static analysis
+  allow_failure: true
+  script:
+    - pylint tsp/*.py
+
+
+pytest:
+  stage: test
+  script:
+    - pytest
+
+coverage:
+  stage: test
+  allow_failure: true
+  script:
+  - pytest --cov-report term-missing --cov=tsp
