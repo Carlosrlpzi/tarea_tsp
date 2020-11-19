@@ -45,3 +45,14 @@ def test_close_tour(places):
     assert t1.closed == True
 
     assert t1.initial == t1.current
+
+def test_missing(places):
+    t1 = Tour()
+    t2 = Tour()
+    t1.append(places['A'])
+    t1.append(places['B'])
+    t1.append(places['C'])
+
+    t2.append(places['D'])
+
+    assert t1.missing(places.values()) == set(t2._path)

@@ -24,12 +24,12 @@ class TSP:
 
         return total_cost
 
-    @staticmethod
+    @classmethod
     def from_file(fileobj):
         coordinates = np.loadtxt(fileobj)
         return TSP(coordinates)
 
-    @staticmethod
+    @classmethod
     def from_random(num_places=50, max_distance=100):
         coordinates = np.random.randint(low=0, high=max_distance, size=(num_places,2))
         return TSP(coordinates)
