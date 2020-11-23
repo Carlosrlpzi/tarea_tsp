@@ -26,3 +26,9 @@ def test_missing_places(tsp_obj):
     t2.append(places['D'])
 
     assert t1.missing(places.values()) == set(t2._path)
+
+def test_from_files(coordinates_file, distances_file):
+    t_coordinate = np.loadtxt(coordinates_file)
+    t_distanse = np.loadtxt(distances_file)
+
+    assert from_files(coordinates_file, distances_file) == t_coordinate, t_distanse

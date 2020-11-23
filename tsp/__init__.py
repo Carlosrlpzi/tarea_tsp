@@ -24,10 +24,6 @@ class TSP:
 
         return total_cost
 
-    @classmethod
-    def from_file(fileobj):
-        coordinates = np.loadtxt(fileobj)
-        return TSP(coordinates)
 
     @classmethod
     def from_random(num_places=50, max_distance=100):
@@ -37,6 +33,14 @@ class TSP:
     @dataclass
     def missing(self, places):
         return set(places) -  set(self._path)
+
+    @classmethod
+    def from_files(coordinates_file, distances_file):
+        coordinates = np.loadtxt(coordinates_file)
+        distances = np.loadtxt(distances_file)
+
+        return coordinates, distances
+
 
 
 @dataclass(eq=True,frozen=True)
@@ -71,9 +75,6 @@ class Tour:
     def close(self):
         if len(self._path) > 1:
             self._path.append(self._path[0])
-
-    def missing(self, places):
-        return set(places) -  set(self._path)
 
     def append(self, place):
         self._path.append(place)
